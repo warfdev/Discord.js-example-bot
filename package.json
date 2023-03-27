@@ -1,5 +1,5 @@
 {
-  "name": "bot1",
+  "name": "Discord.js v13",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "keywords": [
     "discord.js"
   ],
-  "author": "wharf",
+  "author": "wharf#8770",
   "license": "MIT",
   "dependencies": {
     "ascii-table": "^0.0.9",
