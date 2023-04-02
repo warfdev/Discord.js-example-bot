@@ -1,7 +1,7 @@
 # tempban komutu.
-- bu komutu `./Commands/` klasörüne atın.
+- `./Commands/` klasörüne atın.
 
-- **komut;**
+- **kod;**
 ```js
 const { MessageEmbed } = require("discord.js")
 const { PREFIX } = require("../../config.json")
