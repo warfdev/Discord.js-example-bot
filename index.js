@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed, Collection } = require("discord.js");
-const fs= require("fs");
+const fs = require("fs");
 const { PREFIX, TOKEN } = require("./config.json")
 var colors = require("colors")
 const SimplDB = require("simpl.db")
@@ -44,8 +44,29 @@ client.on('messageCreate', async message => {
         message.channel.send(`${message.member} bu komutu yalnızca yapımcım kullanabilir.`)
         return;
       }
-    } 
-}
+    }
+  }
+  
+  
+  // userPermission
+  if(command){
+    if(command.userPermission){
+      if(!message.member.permissions.has(command.userPermission)){
+        message.channel.send(`${message.member}, bu komutu kullanabilmeniz için \`"${userPermission}"\` yetkisine ihtiyacınız var.`)
+        return;
+      }
+    }
+  }
+  
+  // clientPermission
+  if(command){
+    if(command.clientPermission){
+      if(!message.guild.me.permissions.has(command.clientPermission)){
+        message.channel.send(`${message.member}, bu komutu çalıştırabilmem için \`"${clientPermission}"\` yetkisine ihtiyacım var. `)
+        return;
+      }
+    }
+  }
 
   if(command) command.run(client, message, args)
 })
@@ -57,9 +78,5 @@ process.on('unhandledRejection', err => {
 
 
 
-
-
-
-
-
+//login
 client.login(TOKEN)
