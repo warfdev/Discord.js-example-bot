@@ -57,7 +57,7 @@ module.exports = {
     await gwMessage.react('🎉');
     
     
-    //tiner
+    //timer
     setTimeout(async () => {
       const userReact = (await gwMessage.reactions.cache.get('🎉').users.fetch()).filter(user => !user.bot).random();
       
