@@ -1,7 +1,7 @@
 # giveaway komutu
 - `./Commands/` klasörüne atın
 
-# kod;
+- **kod;**
 ```js
 const { MessageEmbed } = require("discord.js")
 
