@@ -52,7 +52,7 @@ client.on('messageCreate', async message => {
   if(command){
     if(command.userPermission){
       if(!message.member.permissions.has(command.userPermission)){
-        message.channel.send(`${message.member}, bu komutu kullanabilmeniz için \`"${userPermission}"\` yetkisine ihtiyacınız var.`)
+        message.channel.send(`${message.member}, bu komutu kullanabilmeniz için \`"${command.userPermission}"\` yetkisine ihtiyacınız var.`)
         return;
       }
     }
@@ -62,7 +62,7 @@ client.on('messageCreate', async message => {
   if(command){
     if(command.clientPermission){
       if(!message.guild.me.permissions.has(command.clientPermission)){
-        message.channel.send(`${message.member}, bu komutu çalıştırabilmem için \`"${clientPermission}"\` yetkisine ihtiyacım var. `)
+        message.channel.send(`${message.member}, bu komutu çalıştırabilmem için \`"${command.clientPermission}"\` yetkisine ihtiyacım var. `)
         return;
       }
     }
